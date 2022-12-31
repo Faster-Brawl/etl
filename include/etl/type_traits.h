@@ -58,7 +58,7 @@ SOFTWARE.
 #include "static_assert.h"
 
 #include <stddef.h>
-#include <stdint.h>
+// #include <stdint.h>
 
 ///\defgroup type_traits type_traits
 /// A set of type traits definitions.

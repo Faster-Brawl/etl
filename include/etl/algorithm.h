@@ -45,7 +45,7 @@ SOFTWARE.
 #include "utility.h"
 
 #include <stdint.h>
-#include <string.h>
+// #include <string.h>
 
 #include "private/minmax_push.h"
 

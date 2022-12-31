@@ -41,7 +41,7 @@ SOFTWARE.
 #include "static_assert.h"
 
 #include <stdint.h>
-#include <stdlib.h>
+// #include <stdlib.h>
 
 ///\defgroup hash Standard hash calculations
 ///\ingroup maths

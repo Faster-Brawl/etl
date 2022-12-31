@@ -56,7 +56,7 @@ SOFTWARE.
 #include "platform.h"
 #include "integral_limits.h"
 
-#include <stdint.h>
+// #include <stdint.h>
 
 ///\defgroup smallest smallest
 ///\ingroup utilities

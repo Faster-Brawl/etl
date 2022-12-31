@@ -38,7 +38,7 @@ SOFTWARE.
 #include "static_assert.h"
 #include "initializer_list.h"
 
-#include <string.h>
+// #include <string.h>
 #include <stddef.h>
 #include <stdint.h>
 
