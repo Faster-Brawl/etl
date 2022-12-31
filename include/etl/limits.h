@@ -7,7 +7,7 @@ Embedded Template Library.
 https://github.com/ETLCPP/etl
 https://www.etlcpp.com
 
-Copyright(c) 2018 John Wellbelove
+Copyright(c) 2018 jwellbelove
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files(the "Software"), to deal
@@ -41,10 +41,11 @@ SOFTWARE.
   #define __USE_C99_MATH
 #endif
 
-#include <limits.h>
+// #include <limits.h>
 #include <stdint.h>
-#include <float.h>
-#include <math.h>
+#include "stdint.h"
+// #include <float.h>
+// #include <math.h>
 
 #include "private/minmax_push.h"
 
@@ -271,32 +272,7 @@ namespace etl
     static ETL_CONSTEXPR signed char signaling_NaN() { return 0; }
   };
 
-#if ETL_HAS_NATIVE_CHAR8_T
-  //***************************************************************************
-  // char8_t
-  template<>
-  class numeric_limits<char8_t> : public etl_integral_limits
-  {
-  public:
-
-    static ETL_CONSTANT int digits = (CHAR_BIT * sizeof(char8_t)) - (etl::is_signed<char8_t>::value ? 1 : 0);
-    static ETL_CONSTANT int digits10 = ETL_LOG10_OF_2(digits);
-    static ETL_CONSTANT bool is_signed = etl::is_signed<char8_t>::value;
-    static ETL_CONSTANT bool is_modulo = false;
-
-    static ETL_CONSTEXPR char8_t min() { return char8_t(CHAR_MIN); }
-    static ETL_CONSTEXPR char8_t max() { return char8_t(CHAR_MAX); }
-    static ETL_CONSTEXPR char8_t lowest() { return char8_t(CHAR_MIN); }
-    static ETL_CONSTEXPR char8_t epsilon() { return 0; }
-    static ETL_CONSTEXPR char8_t round_error() { return 0; }
-    static ETL_CONSTEXPR char8_t denorm_min() { return 0; }
-    static ETL_CONSTEXPR char8_t infinity() { return 0; }
-    static ETL_CONSTEXPR char8_t quiet_NaN() { return 0; }
-    static ETL_CONSTEXPR char8_t signaling_NaN() { return 0; }
-  };
-#endif
-
-#if ETL_HAS_NATIVE_CHAR16_T
+#if (ETL_NO_LARGE_CHAR_SUPPORT == false)
   //***************************************************************************
   // char16_t
   template<>
@@ -319,9 +295,7 @@ namespace etl
     static ETL_CONSTEXPR char16_t quiet_NaN() { return 0U; }
     static ETL_CONSTEXPR char16_t signaling_NaN() { return 0U; }
   };
-#endif
 
-#if ETL_HAS_NATIVE_CHAR32_T
   //***************************************************************************
   // char32_t
   template<>
@@ -344,6 +318,7 @@ namespace etl
     static ETL_CONSTEXPR char32_t quiet_NaN() { return 0U; }
     static ETL_CONSTEXPR char32_t signaling_NaN() { return 0U; }
   };
+
 #endif
 
   //***************************************************************************

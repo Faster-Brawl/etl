@@ -35,7 +35,7 @@ SOFTWARE.
 #include "type_traits.h"
 
 #include <stddef.h>
-#include <limits.h>
+// #include <limits.h>
 
 #include "private/minmax_push.h"
 

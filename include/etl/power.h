@@ -35,7 +35,7 @@ SOFTWARE.
 #include "log.h"
 
 #include <stddef.h>
-#include <stdint.h>
+// #include <stdint.h>
 
 ///\defgroup power power
 /// power<N, POWER> : Calculates N to the power POWER.

@@ -43,7 +43,7 @@ SOFTWARE.
 #include "algorithm.h"
 #include "private/minmax_push.h"
 
-#include <stdint.h>
+// #include <stdint.h>
 
 namespace etl
 {
